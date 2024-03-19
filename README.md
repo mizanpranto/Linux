@@ -4,7 +4,7 @@ Details about Linux and Command
  
 
 <details>
-  <summary>Shell Commands </summary>
+  <summary>Basic Linux Tasks </summary>
   
 ## The CLI (Command-Line Interface)
 ● In Linux, users interact with the system through text commands entered at a prompt.
@@ -13,19 +13,6 @@ Details about Linux and Command
 
 
 </details>
-
-
-
-
-
-<details>
-  <summary>Linux (Get Help) </summary>
-  
-  Content for section 2 goes here.
-</details>
-
-
-
 
 
 
@@ -81,7 +68,7 @@ Details about Linux and Command
 
 
 <details>
-  <summary style="color: blue;" >Section 3</summary>
+  <summary style="color: blue;" >Managing Permissions and Ownership</summary>
   
   Content for section 3 goes here.
 </details>
@@ -91,83 +78,7 @@ Details about Linux and Command
 
 
 <details>
-  <summary style="color: blue;">Section 3</summary>
-  
-  Content for section 3 goes here.
-</details>
-
-
-
-
-
-
-<details>
-  <summary style="color: blue;">Section 3</summary>
-  
-  Content for section 3 goes here.
-</details>
-
-
-
-
-<details>
-  <summary style="color: blue;">Section 3</summary>
-  
-  Content for section 3 goes here.
-</details>
-
-
-
-
-<details>
-  <summary style="color: blue;">Section 3</summary>
-  
-  Content for section 3 goes here.
-</details>
-
-
-
-
-
-<details>
-  <summary style="color: blue;">Section 3</summary>
-  
-  Content for section 3 goes here.
-</details>
-
-
-
-
-
-<details>
-  <summary style="color: blue;">Section 3</summary>
-  
-  Content for section 3 goes here.
-</details>
-
-
-
-
-<details>
-  <summary style="color: blue;">Section 3</summary>
-  
-  Content for section 3 goes here.
-</details>
-
-
-
-
-<details>
-  <summary style="color: blue;">Section 3</summary>
-  
-  Content for section 3 goes here.
-</details>
-
-
-
-
-<details>
-  <summary style="color: blue;">Section 3</summary>
+  <summary style="color: blue;">Managing Storage</summary>
   
   Content for section 3 goes here.
 </details>
@@ -178,7 +89,25 @@ Details about Linux and Command
 
 
 <details>
-  <summary style="color: blue;">Section 3</summary>
+  <summary style="color: blue;">Managing Files and Directories</summary>
+  
+  Content for section 3 goes here.
+</details>
+
+
+
+
+<details>
+  <summary style="color: blue;">Managing Kernel Modules</summary>
+  
+  Content for section 3 goes here.
+</details>
+
+
+
+
+<details>
+  <summary style="color: blue;">Managing System Components</summary>
   
   Content for section 3 goes here.
 </details>
@@ -188,7 +117,7 @@ Details about Linux and Command
 
 
 <details>
-  <summary style="color: blue;">Section 3</summary>
+  <summary style="color: blue;">Managing Devices</summary>
   
   Content for section 3 goes here.
 </details>
@@ -198,7 +127,7 @@ Details about Linux and Command
 
 
 <details>
-  <summary style="color: blue;">Section 3</summary>
+  <summary style="color: blue;">Managing Networking</summary>
   
   Content for section 3 goes here.
 </details>
@@ -207,17 +136,7 @@ Details about Linux and Command
 
 
 <details>
-  <summary style="color: blue;">Section 3</summary>
-  
-  Content for section 3 goes here.
-</details>
-
-
-
-
-
-<details>
-  <summary style="color: blue;">Section 3</summary>
+  <summary style="color: blue;">Managing Packages and Software</summary>
   
   Content for section 3 goes here.
 </details>
@@ -226,18 +145,31 @@ Details about Linux and Command
 
 
 <details>
-  <summary style="color: blue;">Section 3</summary>
+  <summary style="color: blue;">Securing Linux Systems</summary>
   
   Content for section 3 goes here.
 </details>
+
+
+
+
+<details>
+  <summary style="color: blue;">Working with Bash Scripts</summary>
+  
+  Content for section 3 goes here.
+</details>
+
 
 
 
 
 
 <details>
-  <summary style="color: blue;">Section 3</summary>
+  <summary style="color: blue;">Automating Tasks</summary>
   
   Content for section 3 goes here.
 </details>
+
+
+
 

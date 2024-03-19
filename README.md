@@ -18,7 +18,7 @@ Details about Linux and Command
 
 
 <details>
-  <summary style="color: blue;">Managing Users and Groups</summary>
+  <summary style="color: blue;">Managing Users and Groups - working on</summary>
   
 ## Assume Superuser Privileges
 
@@ -64,11 +64,53 @@ Details about Linux and Command
 ● Members of the wheel group can use sudo to perform administrative tasks.<br>
 ● Membership in the wheel group should be carefully controlled.<br>
 
+
+## Create, Modify, and Delete Users
+
+
+<h3>The useradd Command</h3>
+
+● Used for creating user accounts and configuring basic settings.<br>
+● Default settings for the account are stored in /etc/login.defs. ● Home directories are created under /home by default.<br>
+● The useradd command does not set a password by default.<br>
+● Syntax: useradd [options] [user name].<br>
+
+
+<h3>The passwd Command</h3>
+
+● Used for setting or resetting user passwords.<br>
+● Users can change their passwords themselves using this command.<br>
+● Also used to set the initial password when creating an account.<br>
+● Syntax: passwd [user name].<br>
+
+
+<h3> The /etc/passwd File</h3>
+
+● Stores user account information.<br>
+● Contains fields: User name, Password (usually 'x'), User ID, Group ID, Comment (full name), Home directory, and Login shell.<br>
+● Properly edited using user management commands, not manual editing.<br>
+
+
+<h3>The /etc/shadow File</h3>
+
+● Modern storage location for hashed passwords and additional account info.<br>
+● Only root has access to its content for enhanced security.<br>
+● Prevents users from accessing each other's password hashes.<br>
+
+
+<h3>The /etc/shadow File Format</h3>
+● Fields include User name, Password hash, Days since password changed (from 01-01-1970), Days before password must be changed, Days until user is warned to change password, Days after password expires for account disablement.<br>
+
+
+
+
+
+
 </details>
 
 
 <details>
-  <summary style="color: blue;" >Managing Permissions and Ownership</summary>
+  <summary style="color: blue;" >Managing Permissions and Ownership - not started </summary>
   
   Content for section 3 goes here.
 </details>

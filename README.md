@@ -65,13 +65,16 @@ Details about Linux and Command
 ● Membership in the wheel group should be carefully controlled.<br>
 
 
+
+
 ## Create, Modify, and Delete Users
 
 
 <h3>The useradd Command</h3>
 
 ● Used for creating user accounts and configuring basic settings.<br>
-● Default settings for the account are stored in /etc/login.defs. ● Home directories are created under /home by default.<br>
+● Default settings for the account are stored in /etc/login.defs.<br>
+● Home directories are created under /home by default.<br>
 ● The useradd command does not set a password by default.<br>
 ● Syntax: useradd [options] [user name].<br>
 
@@ -102,11 +105,114 @@ Details about Linux and Command
 ● Fields include User name, Password hash, Days since password changed (from 01-01-1970), Days before password must be changed, Days until user is warned to change password, Days after password expires for account disablement.<br>
 
 
+## Create, Modify, and Delete Groups
+
+
+<h3>Group Accounts</h3>
+
+● Groups associate user accounts with similar security requirements.<br>
+● Simplify administrative tasks and resource access.<br>
+● Represented by a Group ID (GID).<br>
+● Users can be members of multiple groups.<br>
+
+<h3>The /etc/group File</h3>
+
+● Stores group information.<br>
+● Contains fields: Group name, Password (usually 'x'), Group ID (GID), Group list (members).<br>
+● Properly edited using group management commands, not manual editing.<br>
+
+<h3>The groupadd Command</h3>
+
+● Creates a group.<br>
+● By default, the group has no members and no password.<br>
+● Syntax: groupadd [options] [group names].<br>
+
+<h3>The groupmod Command</h3>
+
+● Used to modify group attributes.<br>
+● Can change the group's name or GID.<br>
+● Syntax: groupmod [options] [group names].<br>
+
+<h3>The groupdel Command</h3>
+● Deletes groups from the /etc/group file.<br>
+● Does not delete user accounts that are members of the group.<br>
+● Exercise caution when deleting groups.<br>
+
+
+## Query Users and Groups
+
+<h3>whoami Command:</h3>
+● whoami displays the current user's name.<br>
+● Useful for checking the user you're logged in as.<br>
+
+<h3>who Command:</h3>
+
+● who provides details about users currently logged into the system.<br>
+● Shows user names, system names, and login times.<br>
+● Use -u option to see how long users have been idle.<br>
+
+<h3>w Command:</h3>
+● w displays details of currently logged-in users and their activities.<br>
+● Includes user names, terminal, login time, and current activities.<br>
+● Great for tracking user activity in real-time.<br>
+
+<h3>last Command:</h3>
+
+● last shows login/logout history, time, and date for users.<br>
+● Retrieves data from /var/log/wtmp. ● Can filter users or terminals using options.<br>
+
+<h3>id Command:</h3>
+● id displays user ID (UID) and group ID (GID) information.<br>
+● Without options, it shows info for the currently logged-in user.<br>
+● Specify a username to view information for other users.<br>
+
+
+
+## Configure Account Profiles
+
+<h3>.bashrc File:</h3>
+
+● Located in the user's home directory.<br>
+● Customizes a user's environment.<br>
+● Used for aliases, environment variables, and customizing the command prompt.<br>
+● User-specific and hidden (prefixed with a dot).<br>
+
+<h3>.bash_profile File:</h3>
+
+● Provides shell configuration for the initial login environment.<br>
+● Only read during the first login.<br>
+● User-specific, not applied to all shells.<br>
+● Default .bash_profile can be set in the /etc/skel directory.<br>
+
+<h3>/etc/skel/ Directory:</h3>
+
+● Contents copied to new users' home directories.<br>
+● Used for configuring initial settings for new users.<br>
+● Changes made after user creation won't affect existing users.<br>
+
+<h3>/etc/profile File:</h3>
+
+● Provides system-wide environment variables.<br>
+● Read during initial login for all users.<br>
+● Global settings for Bash shell.<br>
+● User-specific settings are pulled from the .profile file in the home directory.<br>
+
+<h3>/etc/profile.d/ Directory:</h3>
+
+● Storage for scripts to set system-wide variables.<br>
+● Recommended for setting environment variables.<br>
+
+<h3>/etc/bashrc File:</h3>
+● Provides system-wide Bash settings.<br>
 
 
 
 
 </details>
+
+
+
+
 
 
 <details>

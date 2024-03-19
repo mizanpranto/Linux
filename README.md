@@ -49,28 +49,34 @@ Details about Linux and Command
 
 <h3> The su Command </h3>
 
-● Used to switch between user identities, allowing users to act as root.
-● The <b> su - </b> command launches a new shell as the target user.
-● The syntax is <b> su [-] [user name] </b>.
+● Used to switch between user identities, allowing users to act as root.<br>
+● The <b> su - </b> command launches a new shell as the target user.<br>
+● The syntax is <b> su [-] [user name] </b>.<br>
 
 <h3> The sudo Command </h3>
 
-● Delegates specific commands to users, avoiding granting full root privileges.
-● Configuration is done in the /etc/sudoers file using the visudo editor.
-● The syntax is sudo [options] {command}.
+● Delegates specific commands to users, avoiding granting full root privileges. <br>
+● Configuration is done in the <b> /etc/sudoers </b> file using the visudo editor.<br>
+● The syntax is <b> sudo [options] {command} </b>.<br>
 
-The sudoedit Command
-● Enables users to edit files with their credentials, even if the file requires root privileges.
-● Must be configured in the /etc/sudoers file.
-● The syntax is sudoedit [options] {file name}.
-The visudo Command
-● Used to edit the /etc/sudoers file securely to avoid syntax errors.
-● Syntax: visudo [options].
-The wheel Group
-● Many Linux distributions disable the root account for users and grant administrative 
-privileges through the wheel group.
-● Members of the wheel group can use sudo to perform administrative tasks.
-● Membership in the wheel group should be carefully controlled.
+<h3>The sudoedit Command</h3>
+
+● Enables users to edit files with their credentials, even if the file requires root privileges. <br>
+● Must be configured in the <b> /etc/sudoers file </b>.<br>
+● The syntax is <b>sudoedit [options] {file name}</b>.<br>
+
+<h3>The visudo Command</h3>
+
+● Used to edit the <b> /etc/sudoers </b> file securely to avoid syntax errors.<br>
+● Syntax: <b>visudo [options] </b>.<br>
+
+
+<h3>The wheel Group</h3>
+
+● Many Linux distributions disable the root account for users and grant administrative privileges through the wheel group.<br>
+● Members of the wheel group can use sudo to perform administrative tasks.<br>
+● Membership in the wheel group should be carefully controlled.<br>
+
 </details>
 
 

@@ -31,11 +31,11 @@ Details about Linux and Command
 
 
 <details>
-  <summary>Managing Users and Groups</summary>
+  <summary style="color: blue;">Managing Users and Groups</summary>
   
 ## Assume Superuser Privileges
 
-<h3> User Accounts </h3>
+<h3 style="color: green;"> User Accounts </h3>
 
 ● Accounts represent users and services in Linux. <br>
 ● User accounts have attributes like passwords, group memberships, comments, etc.<br>
@@ -75,7 +75,7 @@ privileges through the wheel group.
 
 
 <details>
-  <summary>Section 3</summary>
+  <summary style="color: blue;" >Section 3</summary>
   
   Content for section 3 goes here.
 </details>
@@ -85,83 +85,7 @@ privileges through the wheel group.
 
 
 <details>
-  <summary>Section 3</summary>
-  
-  Content for section 3 goes here.
-</details>
-
-
-
-
-
-
-<details>
-  <summary>Section 3</summary>
-  
-  Content for section 3 goes here.
-</details>
-
-
-
-
-<details>
-  <summary>Section 3</summary>
-  
-  Content for section 3 goes here.
-</details>
-
-
-
-
-<details>
-  <summary>Section 3</summary>
-  
-  Content for section 3 goes here.
-</details>
-
-
-
-
-
-<details>
-  <summary>Section 3</summary>
-  
-  Content for section 3 goes here.
-</details>
-
-
-
-
-
-<details>
-  <summary>Section 3</summary>
-  
-  Content for section 3 goes here.
-</details>
-
-
-
-
-<details>
-  <summary>Section 3</summary>
-  
-  Content for section 3 goes here.
-</details>
-
-
-
-
-<details>
-  <summary>Section 3</summary>
-  
-  Content for section 3 goes here.
-</details>
-
-
-
-
-<details>
-  <summary>Section 3</summary>
+  <summary style="color: blue;">Section 3</summary>
   
   Content for section 3 goes here.
 </details>
@@ -172,7 +96,25 @@ privileges through the wheel group.
 
 
 <details>
-  <summary>Section 3</summary>
+  <summary style="color: blue;">Section 3</summary>
+  
+  Content for section 3 goes here.
+</details>
+
+
+
+
+<details>
+  <summary style="color: blue;">Section 3</summary>
+  
+  Content for section 3 goes here.
+</details>
+
+
+
+
+<details>
+  <summary style="color: blue;">Section 3</summary>
   
   Content for section 3 goes here.
 </details>
@@ -182,7 +124,7 @@ privileges through the wheel group.
 
 
 <details>
-  <summary>Section 3</summary>
+  <summary style="color: blue;">Section 3</summary>
   
   Content for section 3 goes here.
 </details>
@@ -192,7 +134,7 @@ privileges through the wheel group.
 
 
 <details>
-  <summary>Section 3</summary>
+  <summary style="color: blue;">Section 3</summary>
   
   Content for section 3 goes here.
 </details>
@@ -201,7 +143,36 @@ privileges through the wheel group.
 
 
 <details>
-  <summary>Section 3</summary>
+  <summary style="color: blue;">Section 3</summary>
+  
+  Content for section 3 goes here.
+</details>
+
+
+
+
+<details>
+  <summary style="color: blue;">Section 3</summary>
+  
+  Content for section 3 goes here.
+</details>
+
+
+
+
+<details>
+  <summary style="color: blue;">Section 3</summary>
+  
+  Content for section 3 goes here.
+</details>
+
+
+
+
+
+
+<details>
+  <summary style="color: blue;">Section 3</summary>
   
   Content for section 3 goes here.
 </details>
@@ -211,16 +182,7 @@ privileges through the wheel group.
 
 
 <details>
-  <summary>Section 3</summary>
-  
-  Content for section 3 goes here.
-</details>
-
-
-
-
-<details>
-  <summary>Section 3</summary>
+  <summary style="color: blue;">Section 3</summary>
   
   Content for section 3 goes here.
 </details>
@@ -230,7 +192,45 @@ privileges through the wheel group.
 
 
 <details>
-  <summary>Section 3</summary>
+  <summary style="color: blue;">Section 3</summary>
+  
+  Content for section 3 goes here.
+</details>
+
+
+
+
+<details>
+  <summary style="color: blue;">Section 3</summary>
+  
+  Content for section 3 goes here.
+</details>
+
+
+
+
+
+<details>
+  <summary style="color: blue;">Section 3</summary>
+  
+  Content for section 3 goes here.
+</details>
+
+
+
+
+<details>
+  <summary style="color: blue;">Section 3</summary>
+  
+  Content for section 3 goes here.
+</details>
+
+
+
+
+
+<details>
+  <summary style="color: blue;">Section 3</summary>
   
   Content for section 3 goes here.
 </details>

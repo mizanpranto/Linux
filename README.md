@@ -35,28 +35,30 @@ Details about Linux and Command
   
 ## Assume Superuser Privileges
 
-User Accounts
-● Accounts represent users and services in Linux.
-● User accounts have attributes like passwords, group memberships, comments, etc.
-● Three types of accounts: root (superuser), standard user, and service accounts.
+<h3> User Accounts </h3>
 
-<h2> Superuser</h2>
-● Root account serves as the local administrator and security context for some 
-applications.
-● Logging in directly as the root user is discouraged due to its extensive privileges.
-● "Principle of Least Privilege" suggests giving users the minimum necessary access for 
-their tasks.
+● Accounts represent users and services in Linux. <br>
+● User accounts have attributes like passwords, group memberships, comments, etc.<br>
+● Three types of accounts: root (superuser), standard user, and service accounts.<br>
 
-The su Command
+<h3> Superuser</h3>
+
+● Root account serves as the local administrator and security context for some applications. <br>
+● Logging in directly as the root user is discouraged due to its extensive privileges.<br>
+● "Principle of Least Privilege" suggests giving users the minimum necessary access for their tasks. <br>
+
+<h3> The su Command </h3>
+
 ● Used to switch between user identities, allowing users to act as root.
-● The su - command launches a new shell as the target user.
-● The syntax is su [-] [user name].
-The sudo Command
+● The <b> su - </b> command launches a new shell as the target user.
+● The syntax is <b> su [-] [user name] </b>.
+
+<h3> The sudo Command </h3>
+
 ● Delegates specific commands to users, avoiding granting full root privileges.
-Copyright 2023+ Cyber Life All Rights Reserved
-11
 ● Configuration is done in the /etc/sudoers file using the visudo editor.
 ● The syntax is sudo [options] {command}.
+
 The sudoedit Command
 ● Enables users to edit files with their credentials, even if the file requires root privileges.
 ● Must be configured in the /etc/sudoers file.

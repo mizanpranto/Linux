@@ -4,7 +4,7 @@ Details about Linux and Command
  
 
 <details>
-  <summary>Enter Shell Commands</summary>
+  <summary> Enter Shell Commands </summary>
   
 ## The CLI (Command-Line Interface)
 ● In Linux, users interact with the system through text commands entered at a prompt.

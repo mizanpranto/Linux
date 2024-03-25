@@ -1124,8 +1124,309 @@ By understanding and configuring these components and files, administrators can 
 
 <details>
   <summary style="color: blue;">Managing System Components</summary>
-  
-  Content for section 3 goes here.
+
+
+## Configure Localization Options
+
+<h3>1. Localization Overview:</h3>
+
+● Localization involves adapting a system's components for use within a distinct culture or language.<br>
+● This includes translating the interface, configuring time zones, keyboard layouts, and date and time formats according to specific regions.<br>
+
+<h3>2. /usr/share/zoneinfo/ Directory:</h3>
+
+● Contains regional time zone information.<br>
+● Subdirectories organize time zone files by language and region.<br>
+● To change the system's time zone, create a symbolic link from one of these files to /etc/localtime.<br>
+
+<h3>3. /etc/timezone File:</h3>
+
+● Used in some Debian-based distributions to specify the time zone.<br>
+● Lists the time zone based on the structure found in /usr/share/zoneinfo.<br>
+
+<h3>4. date Command:</h3>
+
+● Displays the date in various formats.<br>
+● Default format: <day of week> <month> <day> <24-hour time> <time zone> <year>. <br>
+● Use formatting options (e.g., date +%V) to customize the date format.<br>
+● Can also change the system's date using the -s option.<br>
+
+<h3>5. timedatectl Command:</h3>
+
+● Manages system date and time information.<br>
+● Subcommands include status (view current date and time), set-time (set the system time), set-timezone (set the time zone), and more.<br>
+● Allows enabling/disabling synchronization with a Network Time Protocol (NTP) server.<br>
+● Three clock types: local clock, universal time (UTC), and hardware clock (RTC).<br>
+
+<h3>6. Setting the Hardware Clock:</h3>
+
+● Aligning the hardware clock with UTC is recommended to prevent time correction issues.<br>
+● The hardware clock can be set using the hwclock command.<br>
+
+<h3>7. hwclock Command:</h3>
+
+● Used to view and set the hardware clock.<br>
+● Can adjust systematic drift, which is the predictable daily time variation of the hardware clock.<br>
+● The /etc/adjtime file records drift information.<br>
+
+<h3>8. localectl Command:</h3>
+
+● Manages system locale and keyboard layout settings.<br>
+● Locale settings determine language and culture-specific elements.<br>
+● Keyboard layouts ensure correct interpretation of keypresses.<br>
+● Subcommands include status, set-locale, list-locales, set-keymap, and list-keymaps.<br>
+
+<h3>9. Character Sets and Encoding:</h3>
+
+● Character encoding is the process of converting text to bytes and vice versa.<br>
+● The locale settings in Linux determine the character encoding scheme used by the system.<br><br>
+
+By configuring these localization options, administrators can create a user-friendly Linux environment tailored to their users' preferences and regions.<br>
+
+## Configure GUIs
+
+Configuring graphical user interfaces (GUIs) in Linux involves selecting and customizing the GUI environment to meet the needs and preferences of users. GUIs provide a visual interface for interacting with the system and are a common choice for workstations and desktops. Here are the key concepts and actions related to configuring GUIs in Linux:
+
+<h3>GUIs in Linux:</h3>
+
+<b> 1. What is a GUI:</b> A graphical user interface (GUI) is a visual way to interact with a computer system, allowing users to perform tasks using graphical elements such as icons, menus, and windows. GUIs are an alternative to command-line interfaces (CLIs) in Linux.<br>
+
+<b> 2. Choosing a Desktop Environment:</b> Linux offers various desktop environments, each with its own look, feel, and features. Some popular desktop environments include 
+GNOME, KDE Plasma, Cinnamon, and MATE. The choice of desktop environment is a matter of personal preference.<br>
+
+<b>3. Display Servers:</b> Linux supports multiple display servers, including X11 (X Window System) and Wayland. Display servers handle graphical output and user input for GUI applications.<br>
+
+<b>4. X11 (X Window System): </b> X11 is the traditional display server used in Linux for many years. It provides a framework for graphical applications to interact with the hardware. Various implementations, such as X.Org Server, are available.<br>
+
+<b>5. Wayland:</b> Wayland is a newer and more modern display server protocol designed to replace X11. It offers improved performance, security, and native support for 
+compositing.<br>
+
+<h3>Remote Desktop:</h3>
+<b>1. Remote Desktop Software:</b> Remote desktop software allows users to access and control a remote system's GUI from a local computer. Common remote desktop 
+solutions for Linux include Virtual Network Computing (VNC), xrdp, NoMachine, and SPICE.<br>
+<b>2. SSH Port Forwarding:</b> Secure Shell (SSH) can be used to tunnel remote desktop connections securely over the network. SSH port forwarding allows you to establish encrypted connections for services like VNC.<br>
+
+<h3>Console Redirection:</h3>
+
+<b>1. Console Redirection:</b> Console redirection allows administrators to remotely manage systems, even at the BIOS/UEFI level, by forwarding input and output through a serial connection.<br>
+
+<h3>Accessibility Options:</h3>
+
+<b>1. Accessibility Features:</b> Modern desktop environments provide a range of accessibility options to assist users with disabilities. These options include screen readers, magnifiers, enlarged text, on-screen keyboards, sticky keys, repeat keys, toggle keys, and visual themes designed for high contrast and readability.<br><br>
+
+Overall, configuring a GUI in Linux involves selecting the appropriate desktop environment, display server, and remote desktop software to meet the user's needs. It also includes customizing accessibility features to ensure an inclusive computing experience. The choice of GUI components and their configurations should align with the specific requirements of the users and the purpose of the system.<br>
+
+## Manage Services
+
+<h3>Services and Daemons:</h3>
+
+● Linux services provide specialized functionality and can be critical or non-critical.<br>
+● Daemons are background processes that run without human intervention and can start at boot, by applications, or manually.<br>
+
+<h3>Service Management:</h3>
+
+● Service management involves starting, modifying, and stopping services.<br>
+● This process is important for configuring server functionality and troubleshooting issues.<br>
+
+<h3>System Initialization:</h3>
+
+● System initialization begins when the kernel loads and involves loading the OS components.<br>
+● An init daemon, such as SysVinit or systemd, handles system initialization.<br>
+
+<h3>systemd:</h3>
+
+● systemd is a modern init method and is the dominant approach in modern Linux distributions.<br>
+● It offers improvements like parallelization, cgroups for process tracking, and other features.<br>
+
+<h3>systemd Unit Files:</h3>
+
+● Unit files are used by systemd to manage system resources.<br>
+● These files define how systemd handles various system resources.<br>
+● Unit files are stored in specific directories, and environment variables can be set within them.<br>
+
+<h3>systemd Targets:</h3>
+
+● systemd uses targets to represent specific modes of operation.<br>
+● Targets define different system states (e.g., multi-user mode, graphical environment).<br>
+● Targets group unit configuration files.<br>
+
+<h3>The systemctl Command:</h3>
+
+● systemctl is used to control systemd.<br>
+● It can view, enable, disable, start, stop, and restart services.<br>
+● It also manages the system's default target.<br>
+
+<h3>The hostnamectl Command:</h3>
+
+● hostnamectl is used to view and change the system's hostname and system information.<br>
+
+<h3>SysVinit and Runlevels:</h3>
+
+● SysVinit is an older init method with runlevels, still supported by some distributions.<br>
+● Runlevels control the system's state and determine which daemons should run.<br>
+
+<h3>The /etc/inittab File:</h3>
+
+● /etc/inittab stores information about system initialization in SysVinit systems.<br>
+● It defines runlevels and actions to take when changing runlevels.<br>
+
+<h3>The /etc/init.d/ Directory:</h3>
+
+● /etc/init.d/ stores initialization scripts for services and controls how they start.<br>
+
+<h3>The chkconfig Command:</h3>
+
+● chkconfig manages services in different runlevels, enabling, disabling, or resetting them.<br>
+
+<h3>The service Command:</h3>
+
+● service is another tool for controlling SysVinit services, starting, stopping, restarting, and reloading them.<br>
+
+These notes provide a concise summary of the key topics covered in your lesson about managing services.<br>
+
+
+
+## Troubleshoot Process Issues
+
+
+<h3>Process States:</h3>
+
+● Stopped: Indicates a process was stopped by a debugger or a kill signal.<br>
+
+<h3>Process IDs (PID):</h3>
+
+● Every process is assigned a unique PID.<br>
+● The init daemon always has a PID of 1 and is the parent of all other processes.<br>
+● Process troubleshooting often requires knowing a process's PID.<br>
+
+<h3>pgrep Command:</h3>
+
+● Displays the PID of processes matching a pattern.<br>
+● Useful for identifying processes based on various criteria.<br>
+
+<h3>ps Command:</h3>
+
+● Shows a summary of running processes.<br>
+● Various options allow you to filter and display specific information.<br>
+
+<h3>top Command:</h3>
+
+● Lists all running processes and provides real-time status.<br>
+● Allows you to prioritize, sort, and terminate processes interactively.<br>
+
+<h3>systemd-analyze Command:</h3>
+
+● Used for retrieving performance statistics for boot operations.<br>
+● The "blame" subcommand identifies slow-starting units.<br>
+
+<h3>lsof Command:</h3>
+
+● Lists all files currently open to active processes.<br>
+● Helps identify processes preventing file modifications and analyze file usage.<br>
+
+<h3>Process Priorities:</h3>
+
+● Processes are prioritized based on nice values (-20 to 19), with lower values indicating higher priority.<br>
+
+<h3>nice Command:</h3>
+
+● Used to start a new process with a specific nice value.<br>
+● Requires root authority to increase priority.<br>
+
+<h3>renice Command:</h3>
+
+● Alters the scheduling priority of running processes.<br>
+
+<h3>Foreground and Background Processes:</h3>
+
+● Explains how to manage processes running in the foreground and background.<br>
+● Introduces commands like fg, bg, and nohup for process management.<br>
+
+<h3>Kill Commands:</h3>
+
+● Describes different commands for terminating processes.<br>
+● Explains the use of signals like SIGINT, SIGKILL, SIGTERM, and more.<br>
+
+<h3>Guidelines for Troubleshooting Process Issues:</h3>
+
+● Provides a set of guidelines for troubleshooting process-related problems.<br><br>
+These notes summarize the key points from your lesson. If you need more specific information or have any questions, feel free to ask.<br>
+
+
+
+## Troubleshoot CPU and Memory Issues
+
+
+
+<h3>Common CPU Issues:</h3>
+
+● CPU underperformance or overload can cause system disruptions.<br>
+● Non-functional CPU cores or processes not getting enough CPU time are common issues.<br>
+● High CPU usage by some processes can starve others of resources.<br>
+● Insufficient CPU utilization or lack of support for virtualization features can be problematic.<br>
+
+
+<h3>/proc/cpuinfo File:</h3>
+
+● Contains CPU information.<br>
+● Useful fields include processor, vendor_id, model name, cpu MHz, cache size, and flags.<br>
+● Helps identify CPU characteristics and performance-related issues.<br>
+
+<h3>CPU-Based Kernel Parameters:</h3>
+
+● sysctl command for viewing kernel parameters.<br>
+● Useful for analyzing scheduling domains, grouping logical cores with shared properties.<br>
+
+<h3>Common Memory Issues:</h3>
+
+● Low total memory, not enough free memory, or processes not accessing memory are common problems.<br>
+● Insufficient memory for file access, killing critical processes, or improper swap space usage can cause issues.<br>
+
+
+<h3>/proc/meminfo File:</h3>
+
+● Contains information about system memory usage.<br>
+● Fields like MemTotal, MemFree, Cached, SwapTotal, and SwapFree provide valuable memory details.<br>
+
+<h3>free Command:</h3>
+
+● Parses /proc/meminfo for memory usage stats.<br>
+● Displays total memory, used, free, shared, buffered, cached, and available memory.<br>
+● Useful options include -b, -k, -m, -g, -t for different memory units and -o for excluding buffered/cached information.<br>
+
+
+<h3>vmstat Command:</h3>
+● Provides statistics on virtual memory, CPU, process, and I/O.<br>
+● Useful stats include total virtual memory, free memory, memory used in buffers/cache, and CPU times.<br>
+● Requires a delay parameter for accurate reports (e.g., vmstat 5 5).<br>
+
+<h3>OOM Killer:</h3>
+
+● Linux kernel's feature to handle extreme memory shortage by killing processes based onOOM scores.<br>
+● Process OOM scores determine which to kill based on memory release and system stability.<br>
+● Can be controlled by managing OOM control group.<br>
+
+<h3>Swap Space Configuration:</h3>
+
+● Essential for handling memory shortages.<br>
+● Three types: device swap, file system swap, and pseudo-swap.<br>
+● Swap files are dynamic, while swap partitions perform better.<br>
+
+<h3>mkswap Command:</h3>
+
+● Creates swap space on a storage partition.<br>
+● Useful options include -c for checking for bad sectors and -L for labeling.<br>
+
+<h3>Swap Partition Management:</h3>
+
+● Use swapon to activate a swap partition and swapoff to deactivate it.<br>
+● Options like -e, -a, and -a for bulk management.<br>
+
+<h3>Guidelines for Troubleshooting:</h3>
+
+● Use /proc/cpuinfo, uptime, sar, /proc/meminfo, free, and vmstat to diagnose CPU and memory issues.<br>
+● Adjust the OOM killer if necessary.<br>
+● Consider expanding swap space if adding physical memory isn't possible.<br>
 </details>
 
 
@@ -1135,7 +1436,239 @@ By understanding and configuring these components and files, administrators can 
 <details>
   <summary style="color: blue;">Managing Devices</summary>
   
-  Content for section 3 goes here.
+
+## Identify the Types of Linux Devices
+
+
+<h3>The Importance of Device Drivers:</h3>
+
+● Device drivers are essential for hardware devices to work properly in Linux.<br>
+● Compatibility issues can arise if hardware lacks Linux-compatible drivers.<br>
+● Lack of proper drivers can result in devices not functioning or functioning poorly.<br>
+
+<h3>Thin Clients:</h3>
+
+● Thin clients are lightweight devices that connect to more powerful servers.<br>
+● Servers handle most processing, storage, and data management.<br>
+● Centralized operations make system management more efficient.<br>
+
+<h3>USB Devices:</h3>
+
+● Universal Serial Bus (USB) connects various peripherals to computers.<br>
+● Supports thumb drives, external HDDs, cameras, smartphones, printers, keyboards, and more.<br>
+● Plug-and-play technology allows devices to configure themselves automatically.<br>
+
+<h3>Wireless Devices:</h3>
+
+● Linux supports various wireless protocols, including Wi-Fi, Bluetooth, and Near Field Communication (NFC).<br>
+● Wi-Fi for wireless LAN connectivity.<br>
+● Bluetooth for personal area networking.<br>
+● NFC for close-range data sharing.<br>
+
+<h3>Video and Audio Devices:</h3>
+
+● Video and audio devices connect to client systems.<br>
+● Input devices include webcams, cameras, and microphones.<br>
+● Output devices include monitors, TVs, speakers, and headphones.<br>
+● Connection types vary; HDMI, DisplayPort, DVI, and VGA are common.<br>
+
+
+<h3>Printers:</h3>
+
+● Linux offers printer support, and compatibility depends on available drivers.<br>
+● Printers can connect via USB or network interfaces (Wi-Fi or Ethernet).<br>
+● A Linux computer can serve as a print management server.<br>
+
+<h3>Network Adapters:</h3>
+
+● Network adapters (NICs) connect devices to networks.<br>
+● Built into motherboards or added as expansion cards.<br>
+● Include Wi-Fi adapters for wireless and Ethernet for wired connections.<br>
+
+<h3>GPIO:</h3>
+
+● General-purpose input/output (GPIO) pins are on circuit boards.<br>
+● Used for digital signals, controlled programmatically through software.<br>
+● Common in single-board microcontrollers like Arduino and Raspberry Pi.<br>
+
+<h3>SATA and SCSI:</h3>
+
+● SATA (Serial AT Attachment) is a storage bus interface for connecting storage devices.<br>
+● SCSI (Small Computer System Interface) connects various peripherals, including storage.<br>
+● SAS (Serial Attached SCSI) uses a serial interface for high-speed storage connections.<br>
+
+<h3>HBA and PCI:</h3>
+
+● Host Bus Adapter (HBA) connects host systems to storage devices.<br>
+● PCI (Peripheral Component Interconnect) and PCIe (PCI Express) are expansion bus interfaces for peripheral devices.<br>
+● PCIe is the dominant expansion bus technology, supporting various devices.<br>
+
+
+## Configure Devices
+
+<h3>Device File Locations:</h3>
+
+● Device files are located in various directories, including /proc/, /sys/, /dev/, and /etc/. <br>
+● /proc/ and /sys/ contain information about devices and hardware details.<br>
+● /dev/ stores device driver files to access devices.<br>
+● Configuration files for device-related components can be found in /etc/.<br>
+
+<h3>Hotpluggable Devices:</h3>
+
+● Hotpluggable devices can be added or removed without rebooting.<br>
+● Hotpluggable devices are automatically detected when connected, such as USB, FireWire, and SATA.<br>
+● udev is responsible for managing both coldpluggable and hotpluggable devices.<br>
+
+<h3>udev Rules:</h3>
+
+● udev rules are configured in /etc/udev/rules.d/ to customize device behavior.<br>
+● Rules specify how devices are configured or actions taken when devices are plugged in.<br>
+● Rules can create symbolic links, specify attributes like vendor and product IDs, and more.<br>
+
+<h3>Additional udev Rules Directories:</h3>
+
+● /usr/lib/udev/rules.d/ contains system-generated rules with lower priority.<br>
+● Rules in this directory should not be edited.<br>
+● /run/udev/rules.d/ holds volatile rules that apply at runtime but are lost upon reboot.<br>
+
+<h3>The udevadm Command:</h3>
+
+● udevadm manages udev.<br>
+● Subcommands include info (retrieve device information), control (modify udev's running state), trigger (execute rules for device events), monitor (watch for kernel and udev events), and test (simulate udev events).<br>
+● Syntax: udevadm [options] [subcommand] [arguments].<br>
+
+<h3>Printing Software:</h3>
+
+● Printers often come with software utilities, but their compatibility with Linux may vary.<br>
+● Major vendors provide Linux drivers on their websites.<br>
+● CUPS (Common Unix Printing System) serves as a print management system for Linux.<br>
+● CUPS enables computers to act as print servers, processing print jobs from clients.<br>
+● The lpr command submits files for printing, with options like destination, copies, job name, job options, and more.<br>
+
+
+## Monitor Devices
+
+
+<h3>The lsdev Command:</h3>
+
+
+● Displays hardware information collected from /proc/ files.<br>
+● /proc/interrupts shows CPU cores and associated IRQs.<br>
+● /proc/ioports lists I/O ports and their hardware devices.<br>
+● /proc/dma lists ISA DMA channels.<br>
+● Common on Debian-based distributions, may require the procinfo package.<br>
+
+
+<h3>The lsusb Command:</h3>
+
+● Shows USB device information.<br>
+● Scans /dev/bus/usb/ for data.<br>
+● By default, displays bus number, device number, device ID, vendor, and product.<br>
+● Use -v for detailed device information.<br>
+● Filter results by bus (-s) and by vendor/product (-d).<br>
+
+<h3>The lspci Command:</h3>
+
+● Displays information about devices connected to PCI buses.<br>
+● Default output includes slot address, device class, vendor, and device names.<br>
+● Offers verbose mode for more detailed device info.<br>
+
+<h3>The lpq Command:</h3>
+
+● Shows the status of the printer queue.<br>
+● Displays job rank, owner, job number, files, and job size.<br>
+● Can refresh the report at specified intervals with the +interval option.<br>
+
+<h3>Additional Device Monitoring Tools:</h3>
+
+● lsblk: Identifies block storage devices and checks if they are recognized, partitioned, and mounted.<br>
+● dmesg: Shows messages sent to the kernel's message buffer after system boot, including device driver messages. Useful for monitoring hardware issues and driver problems.<br>
+
+## Troubleshoot Hardware Issues
+
+<h3>Common Hardware Issues:</h3>
+
+● Problems can affect various hardware devices, including keyboards, communications ports, printers, memory, video, and storage adapters.<br>
+
+
+<h3>Keyboard Mapping Issues:</h3>
+
+● Incorrectly configured keyboard layout or language can lead to issues.<br>
+● Use localectl to check and set the correct keyboard layout.<br>
+● Remote terminal clients like PuTTY may offer options to adjust keystroke behavior.<br>
+
+<h3>Communications Port Issues:</h3>
+
+● Ensure devices are properly connected, cables aren't loose, and power is supplied.<br>
+● Install necessary drivers for the interface.<br>
+● Confirm device's compatibility with the bus interface version (e.g., USB version).<br>
+● For serial devices, configure them to use appropriate serial console.<br>
+● Adjust permissions on serial consoles if needed.<br>
+
+
+<h3>Printer Issues:</h3>
+
+● Check printer for common problems like ink/paper shortage or paper jams.<br>
+● Ensure Linux-compatible drivers are installed and loaded.<br>
+● Use network diagnostic tools like ping to verify the printer's presence on the network.<br>
+● In a print server setup, use lpq and lprm to manage print jobs and prevent queue overload.<br>
+
+<h3>Memory Issues:</h3>
+
+● Monitor memory usage with tools like free and top. ● Identify and resolve processes causing memory leaks.<br>
+● For hardware memory problems, look for "Machine Check Exception" errors in logs. Use mcelog to retrieve these errors.<br>
+● Perform stress tests with utilities like MemTest to identify faulty RAM modules.<br>
+
+
+<h3>Video Issues:</h3>
+
+● Troubleshoot display issues, blank screens, color problems, etc.<br>
+● Ensure monitors are properly connected and compatible with the system.<br>
+● Install the latest GPU drivers provided by vendors (AMD, Nvidia).<br>
+
+<h3>Storage Adapter Issues:</h3>
+
+● Check data transfer speeds and device recognition.<br>
+● Ensure devices are correctly connected to the appropriate bus adapter.<br>
+● For SCSI devices, use echo command to rescan the SCSI bus.<br>
+● RAID issues can be managed with mdadm, with options like -f, -r, --re-add, and -a.<br>
+
+<h3>lshw Command:</h3>
+
+● lshw lists hardware components and details, extracted from various files.<br>
+● Use it to identify recognized devices and review device characteristics.<br>
+● You can specify device classes with -c option.<br>
+● Helpful for verifying hardware presence and compatibility.<br>
+
+<h3>dmidecode Command:</h3>
+
+● dmidecode dumps the Desktop Management Interface (DMI) table, which tracks hardware component information.<br>
+● Use it to verify connected devices and their features.<br>
+● Be aware that DMI tables may contain inaccurate information.<br>
+
+<h3>ABRT (Automatic Bug Reporting Tool):</h3>
+
+● ABRT reports on problems detected during system runtime, including hardware issues.<br>
+● It collects data like memory dumps and reports to help diagnose problems.<br>
+● Configure ABRT to redirect problem data to different destinations or write to local or remote files.<br>
+
+
+<h3>Guidelines for Troubleshooting Hardware Issues:</h3>
+
+● Ensure driver support for hardware devices.<br>
+● Verify driver installation.<br>
+● Confirm device compatibility with Linux.<br>
+● Check keyboard layout and language.<br>
+● Manage print jobs and queues.<br>
+● Monitor memory usage.<br>
+● Diagnose and replace faulty RAM.<br>
+● Update GPU drivers.<br>
+● Check device connections.<br>
+● Rescan SCSI buses when needed.<br>
+● Use mdadm for RAID issues.<br>
+● Utilize tools like lshw and dmidecode.<br>
+● Be cautious of potentially inaccurate DMI data.<br>
+● Review crash data reported by ABRT.<br>
 </details>
 
 
@@ -1145,7 +1678,7 @@ By understanding and configuring these components and files, administrators can 
 <details>
   <summary style="color: blue;">Managing Networking</summary>
   
-  Content for section 3 goes here.
+  It will be upload ASAP.
 </details>
 
 
@@ -1154,7 +1687,7 @@ By understanding and configuring these components and files, administrators can 
 <details>
   <summary style="color: blue;">Managing Packages and Software</summary>
   
-  Content for section 3 goes here.
+  It will be upload ASAP.
 </details>
 
 
@@ -1163,7 +1696,7 @@ By understanding and configuring these components and files, administrators can 
 <details>
   <summary style="color: blue;">Securing Linux Systems</summary>
   
-  Content for section 3 goes here.
+  It will be upload ASAP.
 </details>
 
 
@@ -1172,7 +1705,7 @@ By understanding and configuring these components and files, administrators can 
 <details>
   <summary style="color: blue;">Working with Bash Scripts</summary>
   
-  Content for section 3 goes here.
+  It will be upload ASAP.
 </details>
 
 
@@ -1183,7 +1716,7 @@ By understanding and configuring these components and files, administrators can 
 <details>
   <summary style="color: blue;">Automating Tasks</summary>
   
-  Content for section 3 goes here.
+  It will be upload ASAP.
 </details>
 
 
